@@ -1,7 +1,5 @@
 package com.gabriel.application;
 
-import com.gabriel.boardgame.Board;
-import com.gabriel.boardgame.Position;
 import com.gabriel.chess.ChessException;
 import com.gabriel.chess.ChessMatch;
 import com.gabriel.chess.ChessPiece;
@@ -31,11 +29,13 @@ public class Program {
                 ChessPosition target = UI.readChessPosition(sc);
 
                 ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
-            } catch (ChessException e) {
-                System.out.print(e.getMessage());
+            }
+            catch (ChessException e) {
+                System.out.println(e.getMessage());
                 sc.nextLine();
-            } catch (InputMismatchException e) {
-                System.out.print(e.getMessage());
+            }
+            catch (InputMismatchException e) {
+                System.out.println(e.getMessage());
                 sc.nextLine();
             }
         }

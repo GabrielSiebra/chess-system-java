@@ -2,6 +2,7 @@ package com.gabriel.chess;
 
 import com.gabriel.boardgame.Board;
 import com.gabriel.boardgame.Piece;
+import com.gabriel.boardgame.Position;
 
 public abstract class ChessPiece extends Piece {
 
@@ -14,5 +15,10 @@ public abstract class ChessPiece extends Piece {
 
     public Color getColor() {
         return color;
+    }
+
+    protected boolean isThereOpponentPiece(Position position) {
+        ChessPiece p = (ChessPiece)getBoard().piece(position);
+        return p != null && p.getColor() != color;
     }
 }
